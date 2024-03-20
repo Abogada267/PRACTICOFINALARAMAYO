@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+    <style>
+        body {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .example-card {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .example-card img {
+            width: 80%;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .card-description {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: auto;
+        }
+
+        .inscribirme-button {
+            background-color: blue;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button mat-button (click)="onCreate()">Agregar</button>
+    <mat-card class="example-card">
+        <img src="https://quees.mobi/wp-content/uploads/2019/12/derecho-procesal-penal.jpg"
+            alt="Imagen de Derecho Penal">
+        <div class="card-description">
+            <p>Derecho Penal</p>
+            <br>
+            <p>Juicios por Jurados</p>
+        </div>
+        <div class="button-container">
+            <button class="inscribirme-button" (click)="navegarAotraPagina()">Inscribirme</button>
+        </div>
+    </mat-card>
+
+    <mat-card class="example-card">
+        <img src="https://www.gestionesjuridicas.com/wp-content/uploads/2020/03/11.jpg"
+            alt="Imagen de Derecho de Familia">
+        <div class="card-description">
+            <p>Derecho de Familia</p>
+            <br>
+            <p>Cálculo de cuota de alimentos</p>
+        </div>
+        <div class="button-container">
+            <button class="inscribirme-button" (click)="navegarAotraPagina()">Inscribirme</button>
+        </div>
+    </mat-card>
+
+    <mat-card class="example-card">
+        <img src="https://panamaosa.com/wp-content/uploads/2019/02/laboral.jpeg" alt="Imagen de Derecho Laboral">
+        <div class="card-description">
+            <p>Derecho Laboral</p>
+            <br>
+            <p>Confección de Demanda</p>
+        </div>
+        <div class="button-container">
+            <button class="inscribirme-button" (click)="navegarAotraPagina()">Inscribirme</button>
+        </div>
+    </mat-card>
+
+    <mat-card class="example-card">
+        <img src="https://www.estudiojuridicodiz.com.ar/wp-content/uploads/2016/06/20180911164733-testamento-1024x682-1.jpeg"
+            alt="Imagen de Sucesiones">
+        <div class="card-description">
+            <p>Sucesiones</p>
+            <br>
+            <p>Pasos a seguir con nuestro primer cliente</p>
+        </div>
+        <div class="button-container">
+            <button class="inscribirme-button" (click)="navegarAotraPagina()">Inscribirme</button>
+        </div>
+    </mat-card>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<h2>{{Alumno.name}}</h2>
+<div><span>id: </span>{{Alumno.id}}</div>
+<div><span>name: </span>{{Alumno.name}}</div>
+<div>
+    <label>Alumnos name:
+      <input #alumnoName  />
+    </label>
+   
+    <button (click)="add(alumnoName.value); alumnoName.value=''">
+      add
+    </button>
+  </div>
+<ul class="alumnos">
+  <div *ngFor="let alumno of alumnos">
+    {{ alumno }}
+  
+        <a routerLink="/detail/{{alumno.id}}">
+            <span class="badge">{{alumno.id}}</span> {{alumno.name}}
+        </a>
+        <button class="delete" title="delete alumno"
+      (click)="delete(alumno)">x</button>
+    </div>
+</ul>

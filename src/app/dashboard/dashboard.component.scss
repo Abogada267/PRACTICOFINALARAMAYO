@@ -1,0 +1,13 @@
+/* DashboardComponent's private CSS styles */
+.dashboard-container {
+    height: 100vh;
+}
+
+.dashboard-sidebar {
+    width: 200px;
+}
+
+.is-active {
+    color: var(--mat-stepper-header-edit-state-icon-background-color);
+    
+}

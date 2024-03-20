@@ -1,0 +1,68 @@
+<h3>Top Alumnos</h3>
+<div class="grid grid-pad">
+<a *ngFor="let Alumno of Alumno" class="col-1-4"   routerLink="/detail/{{alumno.id}}">
+        <div class="module">
+            <h4>{{Alumno.name}}</h4>
+        </div>
+    </a>
+</div>
+
+<app-alumnos-search></app-alumnos-search>
+<mat-drawer-container class="dashboard-container" autosize>
+    <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
+    <mat-drawer #drawer class="dashboard-sidebar" mode="side">
+        <mat-nav-list>
+            <a #homeLink="routerLinkActive" routerLinkActive [activated]="homeLink.isActive" routerLink="home"
+                mat-list-item>Inicio</a>
+            <a #usersLink="routerLinkActive" routerLinkActive [activated]="usersLink.isActive" routerLink="users"
+                mat-list-item>Usuarios</a>
+            <a #productsLink="routerLinkActive" routerLinkActive [activated]="productsLink.isActive"
+                routerLink="products" mat-list-item>Productos</a>
+            <a #salesLink="routerLinkActive" routerLinkActive [activated]="salesLink.isActive" routerLink="sales"
+                mat-list-item>Ventas</a>
+            <a #clase16Link="routerLinkActive" routerLinkActive [activated]="clase16Link.isActive" routerLink="clase-16"
+                mat-list-item>Clase 16 Redux</a>
+            <a (click)="logout()" mat-list-item>Cerrar sesion</a>
+        </mat-nav-list>
+    </mat-drawer>
+    <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
+
+    <!-- CONTENIDO -->
+    <!-- CONTENIDO -->
+    <div class="example-sidenav-content">
+        <!-- TOOLBAR -->
+        <!-- TOOLBAR -->
+        <!-- TOOLBAR -->
+        <mat-toolbar color="primary">
+            <button (click)="drawer.toggle()" mat-icon-button class="example-icon"
+                aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>My App</span>
+            <span style="flex: 1"></span>
+            <div *ngIf="authUser$ | async; let user">
+                <span>{{ user.firstName }} {{ user.lastName }}</span>
+                <p class="m-0">{{ user?.email }}</p>
+            </div>
+        </mat-toolbar>
+        <!-- TOOLBAR -->
+        <!-- TOOLBAR -->
+
+        <div class="p-3">
+            <router-outlet></router-outlet>
+            <!-- <app-rxjs-introduccion></app-rxjs-introduccion> -->
+            <!-- <app-rxjs-example></app-rxjs-example> -->
+            <!-- <app-pipes></app-pipes> -->
+            <!-- <app-users></app-users> -->
+            <!-- <app-categories></app-categories> -->
+        </div>
+
+        <!-- <div appResaltado appResaltado2></div> -->
+    </div>
+    <!-- CONTENIDO -->
+    <!-- CONTENIDO -->
+</mat-drawer-container>
